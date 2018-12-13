@@ -1,0 +1,18 @@
+<!-- extends bellow means that base.html template we want to use-->
+{% extends 'admin/base.html' %} 
+
+<!-- we want to use an image for the logo so we need to extend static file-->
+{% load static %}
+<!-- Block defines a block that can be overwriten by child templates -->
+{% block branding %}
+    <h1 id ="head">
+        <img src="{% static 'img/logo.png' %}" alt="BT Real Estate" height="50" 
+        width="80" class="brand_img"> Admin
+    </h1>
+{% endblock %}
+<!-- for CSS if we want to edit we need to add another block -->
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+<!-- each block has to end -->
+{% endblock %}
